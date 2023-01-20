@@ -5,12 +5,12 @@ Basic setup for websockets
 
 Hosting the client with `go run .`
 
-Runs on port 8080
+Runs on port :8080
 
 ## HTML client
 
 Hosting the client with `python -m http.server 80`
 
-Runs on port 80
+Runs on port :80
 
-Connects to port 8080
+Connects to port :8080
