@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Websocket client test</title>
+</head>
+
+<body>
+    <h1>Websocket client test</h1>
+    <script>
+        if ("WebSocket" in window) {
+            console.log("Websocket is supported by your Browser!");
+        } else {
+            console.log("Websocket is not supported by your Browser!");
+        }
+
+        var ws = new WebSocket("ws://localhost:8080");
+        ws.onopen = () => {
+            ws.send("Hello, server. From client");
+            console.log("Sent: Hello, server. From client");
+        };
+        ws.onmessage = (evt) => {
+            var received_msg = evt.data;
+            console.log("Received: " + received_msg);
+        };
+        ws.onclose = () => {
+            console.log("Connection is closed...");
+        };
+    </script>
+</body>
+
+</html>
